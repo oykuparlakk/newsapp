@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:newsapp/model/modelfile.dart';
 
 class ViewModel {
-  final ModelNewsArticle _modelNewsArticle;
+  ModelNewsArticle _modelNewsArticle;
   ViewModel({required ModelNewsArticle article}) : _modelNewsArticle = article;
 
   String get title {
@@ -18,13 +17,13 @@ class ViewModel {
     return _modelNewsArticle.url;
   }
 
+  String get urlToImage {
+    return _modelNewsArticle.urlToImage;
+  }
+
   String get publishedAt {
     final dateTime = DateFormat('yyyy-mm-ddTHH:mm:ssZ')
         .parse(_modelNewsArticle.publishedAt, true);
     return DateFormat.yMMMMEEEEd('en-us').format(dateTime);
-  }
-
-  String get urlImage {
-    return _modelNewsArticle.urlImage;
   }
 }

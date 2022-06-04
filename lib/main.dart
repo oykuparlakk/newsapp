@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/screens/homescreen.dart';
+import 'package:newsapp/screens/mainscreen.dart';
 import 'package:newsapp/vm/listviewmodel.dart';
 import 'package:provider/provider.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+void main() {
+  runApp(MyApp());
+}
 
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: MultiProvider(
         providers: [
           ChangeNotifierProvider(
             create: (_) => ListViewModel(),
-          )
+          ),
         ],
-        child: HomeScreen() ,
+        child: NewsScreen(),
       ),
     );
   }
