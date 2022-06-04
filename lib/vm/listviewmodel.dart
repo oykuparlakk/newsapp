@@ -12,7 +12,7 @@ enum LoadingStatus {
 class ListViewModel with ChangeNotifier {
   LoadingStatus loadingStatus = LoadingStatus.Empty;
 
-  List<ViewModel> articles = List<ViewModel>();
+  List<ViewModel> articles = <ViewModel>[];
 
   // methods to fetch news
   void fetchTopNewsHeadlines() async {

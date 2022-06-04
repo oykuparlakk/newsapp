@@ -8,6 +8,7 @@ class Constants {
   }
 
   static const Map<String, String> Countries = {
+    'Turkey': 'tr',
     'USA': 'us',
     'China': 'cn',
   };

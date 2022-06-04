@@ -30,7 +30,8 @@ class _NewsScreenState extends State<NewsScreen> {
         actions: <Widget>[
           PopupMenuButton(
             onSelected: (country) {
-              listviewmodel.fetchNewsByCountry(Constants.Countries[country]);
+              listviewmodel
+                  .fetchNewsByCountry(Constants.Countries[country] ?? "");
             },
             icon: Icon(Icons.more_vert),
             itemBuilder: (_) {
